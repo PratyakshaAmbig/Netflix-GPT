@@ -3,13 +3,12 @@ import Header from "./Header";
 import { checkValidData } from "../utils/validate";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { useNavigate } from "react-router-dom";
+import { BACKEND_URL, USER_AVATAR } from "../utils/constant";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const name = useRef(null);
   const email = useRef(null);
@@ -28,7 +27,7 @@ const Login = () => {
     if (isSignInForm) {
       // Sign Up Logic
       try {
-        const response = await fetch("http://localhost:5001/api/auth/signup", {
+        const response = await fetch(`${BACKEND_URL}/signup`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -49,10 +48,9 @@ const Login = () => {
               userName: data.user.userName,
               emai: data.user.email,
               token: data.token,
-              photoURL:'https://avatars.githubusercontent.com/u/149353741?v=4'
+              photoURL:USER_AVATAR
             })
           );
-          navigate('/browse')
         }
       } catch (error) {
         console.log(error);
@@ -61,7 +59,7 @@ const Login = () => {
     } else {
       // Sign In Logic
       try {
-        const response = await fetch("http://localhost:5001/api/auth/signin", {
+        const response = await fetch(`${BACKEND_URL}/signin`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -82,10 +80,9 @@ const Login = () => {
               userName: data.user.userName,
               emai: data.user.email,
               token: data.token,
-              photoURL:'https://avatars.githubusercontent.com/u/149353741?v=4'
+              photoURL:USER_AVATAR
             })
           );
-          navigate('/browse')
         }
       } catch (error) {
         console.log(error.message);

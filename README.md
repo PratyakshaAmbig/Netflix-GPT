@@ -11,6 +11,11 @@
 - Implement the Sign In and Sign Up Api
 - Created Redux Store with userSlice
 - Implemented Sign Out Feature
+- Fetch Movies from TMDB API
+- BugFix: If user is not logged In Redirect /browse to Login page and vice-verse
+- Add the HardCoded values to the constants file
+- Register TMDB API AND create an App and get the access token
+- Get Data from TMDB now playing movies list API
 
 # Features
 - Login/Sign Up
