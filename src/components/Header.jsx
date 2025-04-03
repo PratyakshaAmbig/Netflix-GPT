@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeUser } from '../utils/userSlice';
+import { addUser, removeUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { LOGO } from '../utils/constant';
 
@@ -9,6 +9,15 @@ const Header = () => {
   const navigate = useNavigate();
 
   const user = useSelector((store)=> store.user);
+
+  useEffect(()=>{
+ //get the value from local storage and it will be the string value and we have to convert the string value to object and send it to the store
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if(storedUser){
+      dispatch(addUser(storedUser));
+    }
+  },[dispatch])
+
   useEffect(()=>{
     if(user){
       navigate('/browse');
