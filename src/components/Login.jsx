@@ -46,7 +46,7 @@ const Login = () => {
             addUser({
               userId: data.user.id,
               userName: data.user.userName,
-              emai: data.user.email,
+              email: data.user.email,
               token: data.token,
               photoURL:USER_AVATAR
             })
@@ -78,7 +78,7 @@ const Login = () => {
             addUser({
               userId: data.user.id,
               userName: data.user.userName,
-              emai: data.user.email,
+              email: data.user.email,
               token: data.token,
               photoURL:USER_AVATAR
             })
