@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@layer utilities {
+    .scrollbar-hide::-webkit-scrollbar{
+        display: none;
+    }
+    .scrollbar-hide{
+        -ms-overflow-style: none; /* IE and Edge :Internet Explorer and old versions of Edge*/
+        scrollbar-width: none;  /* Firefox */
+    }
+}
+/* 
+-ms-overflow-style: none; (for Internet Explorer & old Edge)
+->This is a Microsoft-specific CSS property.
+->Setting it to none hides the scrollbar in Internet Explorer and old versions of Edge (before Edge switched to Chromium).
+
+scrollbar-width: none; (for Firefox)
+->This is the standard way to hide scrollbars in Firefox.
+->Setting it to none makes the scrollbar disappear while still allowing the element to scroll.
+*/

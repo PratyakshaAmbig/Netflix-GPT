@@ -30,6 +30,7 @@
 - Added the TMBD Image CDN URL
 - Made the Browse page look better with tailwind css
 - Created the usePopularMovies, useTopRatedMovies and useUpcomingMovies Custom hook
+- Hide the scrollbar using normal css in index.css file
 
 # Features
 - Login/Sign Up
