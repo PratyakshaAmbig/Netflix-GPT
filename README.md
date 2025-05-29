@@ -31,6 +31,12 @@
 - Made the Browse page look better with tailwind css
 - Created the usePopularMovies, useTopRatedMovies and useUpcomingMovies Custom hook
 - Hide the scrollbar using normal css in index.css file
+- usePopularMovies Custom hook
+- useTopRatedMovies Custom hook
+- useUpComingMovies Custom hook
+- GPT Search Feature
+- GPT Search Bar
+- (****)Multi-language Feature in our App
 
 # Features
 - Login/Sign Up

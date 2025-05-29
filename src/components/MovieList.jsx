@@ -2,7 +2,6 @@ import React from 'react'
 import MovieCard from './MovieCard'
 
 const MovieList = ({title,movies}) => {
-    console.log(title,movies);
     // Ensure movies is an array and has at least 2 items
   //  if (!Array.isArray(movies) || movies.length === 0) return null
     // checks if 'movies' is not an array (e.g., undefined or null)

@@ -12,6 +12,8 @@ const userSlice = createSlice({
         removeUser : ()=>{
              // Remove user data from local storage when logging out
             localStorage.removeItem("user");
+            localStorage.removeItem("langaugePreference");
+            localStorage.removeItem("showGptSearch")
             return null;
         }
     }

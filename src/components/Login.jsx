@@ -3,12 +3,15 @@ import Header from "./Header";
 import { checkValidData } from "../utils/validate";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { BACKEND_URL, USER_AVATAR } from "../utils/constant";
+import { BACKEND_URL, BG_URL, USER_AVATAR } from "../utils/constant";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const dispatch = useDispatch();
+
+  // In section starting we have to set the langaugePreference in local storage
+  localStorage.setItem('langaugePreference', 'english');
 
   const name = useRef(null);
   const email = useRef(null);
@@ -95,8 +98,8 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/50fcc930-ba3f-4cae-9257-9f920e30a998/web/IN-en-20250310-TRIFECTA-perspective_739387a0-ff14-44ed-a5af-36e5aa4d236e_large.jpg"
-          alt="bac"
+          src={BG_URL}
+          alt="backgroundImage"
         />
       </div>
       <form
